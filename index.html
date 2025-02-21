@@ -5,27 +5,24 @@
 </head>
 <body>
   <h1>testing</h1>
-  <form id="loginForm">
+  <form id="test">
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
+    <input type="text" id="username" name="username" required>
     <button type="submit">Login</button>
   </form>
 
   <div id="message"></div>
 
   <script>
-    const loginForm = document.getElementById('loginForm');
+    const test= document.getElementById('loginForm');
     const messageDiv = document.getElementById('message');
 
     loginForm.addEventListener('submit', (event) => {
       event.preventDefault(); 
 
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const username = document.getElementById('username').value
 
-      fetch('/login', {
+      fetch('/test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
