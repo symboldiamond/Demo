@@ -7,25 +7,25 @@
   <h1>testing</h1>
   <form id="test">
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
-    <button type="submit">Login</button>
+    <input type="text" id="username" name="username" required><br><br>
+    <button type="submit">button</button>
   </form>
 
   <div id="message"></div>
 
   <script>
-    const test= document.getElementById('loginForm');
+    const test = document.getElementById('test');
     const messageDiv = document.getElementById('message');
 
-    loginForm.addEventListener('submit', (event) => {
+    test.addEventListener('submit', (event) => {
       event.preventDefault(); 
 
-      const username = document.getElementById('username').value
+      const username = document.getElementById('username').value;
 
       fetch('/test', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ username })
       })
       .then(response => response.json())
       .then(data => {
@@ -37,10 +37,9 @@
       })
       .catch(error => {
         console.error('Error:', error);
-        messageDiv.textContent = 'just some demo';
+        messageDiv.textContent = 'just a demo';
       });
     });
   </script>
 </body>
-  </html>
-
+</html>
